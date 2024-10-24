@@ -1,0 +1,44 @@
+.menu {
+  background-color: #0a8805;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideIn 0.5s ease;
+}
+
+.menu-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.menu-items li {
+  margin-right: 20px;
+  animation: slideIn 0.5s ease;
+}
+
+.menu-items li > a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 5px;
+  position: relative;
+  display: inline-block;
+}
+
+.menu-items a:hover {
+  cursor: pointer;
+}
+
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

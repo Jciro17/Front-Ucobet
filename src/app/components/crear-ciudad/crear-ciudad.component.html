@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <div class="header">
+    <h1 class="title">Crear Ciudad</h1>
+  </div>
+  <div class="content">
+    <form
+      [formGroup]="ciudadForm"
+      (ngSubmit)="crearCiudad()"
+      class="form"
+    >
+      <div class="form-group">
+        <label for="nombreCiudad" class="form-label">Nombre</label>
+        <input
+          type="text"
+          id="nombreCiudad"
+          class="form-input"
+          formControlName="nombreCiudad"
+        />
+      </div>
+      <div class="form-group">
+        <label for="estado" class="form-label">Estado</label>
+        <select
+          id="estado"
+          class="form-select"
+          formControlName="estado"
+        >
+          <option [value]="estado.id" *ngFor="let estado of estados">
+            {{ estado.nombre }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group text-center">
+        <button type="submit" class="btn">Crear</button>
+      </div>
+    </form>
+  </div>
+</div>
