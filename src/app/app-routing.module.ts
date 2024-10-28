@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CrearCiudadComponent } from 'src/app/components/crear-ciudad/crear-ciudad.component';
 import { InicioComponent } from 'src/app/components/inicio/inicio.component';
+import { LoginComponent } from 'src/app/components/login/login.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'inicio',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   {
@@ -16,6 +17,15 @@ const routes: Routes = [
   {
     path: 'crear-ciudad',
     component: CrearCiudadComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: '**',
+    redirectTo: 'login',
+    pathMatch: 'full',
   },
 ];
 

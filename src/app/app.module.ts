@@ -8,6 +8,10 @@ import { MenuComponent } from './components/menu/menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
+
+// Import the AuthService type from the SDK
+import { AuthModule, AuthService } from '@auth0/auth0-angular';
 
 @NgModule({
   declarations: [
@@ -15,14 +19,19 @@ import { HttpClientModule } from '@angular/common/http';
     CrearCiudadComponent,
     InicioComponent,
     MenuComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    AppRoutingModule,
+     AuthModule.forRoot({
+      domain: 'dev-dvkulj3wfr62ggfg.us.auth0.com',
+      clientId: 'gJfhR0DTTeMmx4TnCoMt8J8QCCj5oFq1',
+     }),
   ],
   providers: [],
   bootstrap: [AppComponent],
